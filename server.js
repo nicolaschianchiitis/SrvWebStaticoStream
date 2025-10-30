@@ -1,7 +1,6 @@
 // Moduli utilizzati
 const http = require('http')
-// const fs = require('fs')
-const fs = require('fs').promises
+const fs = require('fs')
 const path = require('path')
 
 // Parametri server
@@ -16,7 +15,8 @@ const mimeTypes = {
     '.jpeg': 'image/jpeg',
     '.json': 'application/json',
     '.js': 'text/javascript',
-    '.md': 'text/markdown'
+    '.md': 'text/markdown',
+    '.mp4': "video/mp4"
 }
 
 // Oggetto risolutore delle path dei file, fornito l'URL della richiesta
@@ -25,12 +25,14 @@ const filePaths = {
     '/css': './public/css/style.css',
     '/logo_olimpiadi': './public/img/logo_olimpiadi.png',
     '/discipline': './public/html/discipline.html',
-    '/edizioni': './public/html/edizioni.html'
+    '/edizioni': './public/html/edizioni.html',
+    '/video_pista_atletica': './public/video/video_pista_atletica.mp4'
 }
 
 async function requestHandler(req, res) {
     console.log(`>>> Richiesta in entrata: ${req.url}`)
-    let reqPath = filePaths[req.url]
+    
+    /* let reqPath = filePaths[req.url]
     let extension = path.extname((reqPath == undefined ? '' : reqPath))
     let encoding = (extension == '.jpeg' || extension == '.png') ? '' : 'utf-8'
 
@@ -44,7 +46,7 @@ async function requestHandler(req, res) {
         res.writeHead(404, { 'Content-Type': mimeTypes['.html'] })
         res.write(`<center><h1 style="border: 4px solid red;">Errore 404: risorsa non trovata.</h1></center>`)
         res.end()
-    }
+    } */
 
     /* // Versione con funzioni asincrone e callback
     fs.readFile((reqPath == undefined ? '' : reqPath), {'encoding': encoding}, function (err, data) {
