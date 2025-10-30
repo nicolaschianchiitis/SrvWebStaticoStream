@@ -1,0 +1,21 @@
+{
+  "name": "srvwebstaticostream",
+  "version": "1.0.0",
+  "description": "Server web statico con gli stream",
+  "homepage": "https://github.com/nicolaschianchiitis/SrvWebStaticoStream#readme",
+  "bugs": {
+    "url": "https://github.com/nicolaschianchiitis/SrvWebStaticoStream/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolaschianchiitis/SrvWebStaticoStream.git"
+  },
+  "license": "ISC",
+  "author": "Nicola Schianchi",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  }
+}
